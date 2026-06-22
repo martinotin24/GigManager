@@ -125,7 +125,7 @@ const Dashboard = () => {
         <div style={{...statCard, borderBottom: '4px solid #f1416c'}}>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
             <div>
-              <p style={statLabel}>Awaiting Payment</p>
+              <p style={statLabel}>Esperando Pago</p>
               <h2 style={statValue}>{formatCurrency(stats.unpaidAmount)}</h2>
             </div>
             <div style={{...iconWrapper, backgroundColor: '#fff5f8', color: '#f1416c'}}>

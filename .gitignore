@@ -1,4 +1,16 @@
-**/node_modules/
-**/dist/
-**/build/
-**/.env
+# Dependencias
+node_modules/
+
+# Variables de entorno ¡CRÍTICO!
+.env
+.env.*
+
+# Archivos de build (si usas React compilado)
+dist/
+build/
+
+# Archivos y respaldos de Base de Datos
+*.sql
+*.sqlite
+*.sqlite3
+*.db
