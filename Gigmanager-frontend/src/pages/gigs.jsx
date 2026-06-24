@@ -41,7 +41,7 @@ const Gigs = () => {
     e.stopPropagation();
     
     const confirmDelete = window.confirm(
-      `⚠️ Delete Gig: Are you sure you want to delete "${gig.title}"?\n\nThis action cannot be undone.`
+      `⚠️ Delete Gig: Are you sure you want to delete this gig? "${gig.title}"?\n\nThis action cannot be undone.`
     );
 
     if (confirmDelete) {
