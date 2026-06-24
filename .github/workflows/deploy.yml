@@ -27,5 +27,4 @@ jobs:
           script: |
             cd /var/www/GigManager-FullStack
             git pull origin main
-            npm install --production
-            pm2 restart gigmanager || pm2 start server.js --name "gigmanager"
+            docker-compose up -d --build
