@@ -12,12 +12,6 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v3
 
-      - name: Enviar Webhook a DigitalOcean Functions
-        run: |
-          curl -X POST https://faas-sfo3-7872a1dd.doserverless.co/api/v1/web/fn-f807d59b-1060-4215-aaad-7564826c7dbd/default/github-deploy-logger \
-          -H "Content-Type: application/json" \
-          -d '{"repository": {"name": "${{ github.repository }}"}, "event": "push"}'
-
       - name: Ejecutar comandos en el Droplet via SSH
         uses: appleboy/ssh-action@master
         with:
@@ -30,3 +24,6 @@ jobs:
             cd Gigmanager-backend
             npm install --production
             pm2 restart gigmanager || pm2 start server.js --name "gigmanager"
+            curl -X POST https://faas-sfo3-7872a1dd.doserverless.co/api/v1/web/fn-f807d59b-1060-4215-aaad-7564826c7dbd/default/github-deploy-logger \
+            -H "Content-Type: application/json" \
+            -d '{"repository": {"name": "GigManager"}, "event": "push"}'
